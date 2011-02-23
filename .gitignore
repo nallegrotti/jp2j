@@ -2,3 +2,5 @@
 /.project
 *.class
 /junit/*
+/classes/
+/junit/

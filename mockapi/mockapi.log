@@ -1,0 +1,1191 @@
+Welcome to Grails 1.3.5 - http://grails.org/
+Licensed under Apache Standard License 2.0
+Grails home is set to: /usr/share/GroundZero/grails-1.3.5
+
+Base Directory: /home/nallegrotti/workspace/mlrouter/mockapi
+Resolving dependencies...
+Dependencies resolved in 2895ms.
+Running script /usr/share/GroundZero/grails-1.3.5/scripts/RunApp.groovy
+Environment set to development
+   [delete] Deleting directory /home/nallegrotti/.grails/1.3.5/projects/mockapi/tomcat
+Running Grails application..
+2011-02-22 12:59:10,191 [main] ERROR http11.Http11Protocol  - Error initializing endpoint
+java.net.BindException: Address already in use<null>:8081
+	at org.apache.tomcat.util.net.JIoEndpoint.init(JIoEndpoint.java:509)
+	at org.apache.coyote.http11.Http11Protocol.init(Http11Protocol.java:176)
+	at org.apache.catalina.connector.Connector.initialize(Connector.java:1057)
+	at org.apache.catalina.core.StandardService.initialize(StandardService.java:675)
+	at org.apache.catalina.core.StandardServer.initialize(StandardServer.java:793)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSiteNoUnwrapNoCoerce.invoke(PojoMetaMethodSite.java:229)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:52)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at org.grails.tomcat.TomcatServer.start(TomcatServer.groovy:212)
+	at grails.web.container.EmbeddableServer$start.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:128)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy:158)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at _GrailsRun_groovy$_run_closure5_closure12.doCall(_GrailsRun_groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:280)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:266)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:56)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:153)
+	at _GrailsSettings_groovy$_run_closure10.call(_GrailsSettings_groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1104)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1060)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:706)
+	at groovy.lang.GroovyObjectSupport.invokeMethod(GroovyObjectSupport.java:44)
+	at groovy.lang.Script.invokeMethod(Script.java:78)
+	at groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(MetaClassImpl.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1017)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:153)
+	at _GrailsRun_groovy$_run_closure5.doCall(_GrailsRun_groovy:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:266)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at _GrailsRun_groovy$_run_closure5.call(_GrailsRun_groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1104)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1060)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at _GrailsRun_groovy.runInline(_GrailsRun_groovy:116)
+	at _GrailsRun_groovy.this$4$runInline(_GrailsRun_groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1003)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:161)
+	at _GrailsRun_groovy$_run_closure1.doCall(_GrailsRun_groovy:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:289)
+	at sun.reflect.GeneratedMethodAccessor91.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:54)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
+	at sun.reflect.GeneratedMethodAccessor114.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
+	at sun.reflect.GeneratedMethodAccessor113.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
+	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
+	at sun.reflect.GeneratedMethodAccessor107.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1003)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:706)
+	at groovy.lang.GroovyObjectSupport.invokeMethod(GroovyObjectSupport.java:44)
+	at groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(MetaClassImpl.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1017)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:157)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
+	at sun.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
+	at sun.reflect.GeneratedMethodAccessor105.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1104)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1060)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:706)
+	at groovy.lang.GroovyObjectSupport.invokeMethod(GroovyObjectSupport.java:44)
+	at groovy.lang.Script.invokeMethod(Script.java:78)
+	at groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(MetaClassImpl.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1017)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:145)
+	at RunApp$_run_closure1.doCall(RunApp.groovy:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:289)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.DelegatingMetaClass.invokeMethod(DelegatingMetaClass.java:149)
+	at org.codehaus.gant.GantMetaClass.invokeMethod(GantMetaClass.java:127)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:54)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16_closure18.doCall(GantBinding.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.gant.GantBinding.withTargetEvent(GantBinding.groovy:90)
+	at org.codehaus.gant.GantBinding.this$4$withTargetEvent(GantBinding.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1003)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:706)
+	at groovy.lang.GroovyObjectSupport.invokeMethod(GroovyObjectSupport.java:44)
+	at groovy.lang.MetaClassImpl.invokeMethodOnGroovyObject(MetaClassImpl.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1017)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:66)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:157)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at org.codehaus.gant.GantBinding$_initializeGantBinding_closure5_closure16.doCall(GantBinding.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:289)
+	at groovy.lang.Closure$call$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy:415)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at gant.Gant$_dispatch_closure7.doCall(Gant.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.Closure.call(Closure.java:276)
+	at groovy.lang.Closure.call(Closure.java:271)
+	at groovy.lang.Closure$call.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:40)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
+	at gant.Gant.withBuildListeners(Gant.groovy:427)
+	at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+	at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
+	at gant.Gant.dispatch(Gant.groovy:415)
+	at gant.Gant.this$2$dispatch(Gant.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:88)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1058)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1070)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:886)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:708)
+	at gant.Gant.invokeMethod(Gant.groovy)
+	at groovy.lang.GroovyObject$invokeMethod.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:153)
+	at gant.Gant.executeTargets(Gant.groovy:590)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSite.invoke(PogoMetaMethodSite.java:225)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:51)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:44)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:141)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:153)
+	at gant.Gant.executeTargets(Gant.groovy:589)
+	at org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeWithGantInstance(GrailsScriptRunner.java:664)
+	at org.codehaus.groovy.grails.cli.GrailsScriptRunner.callPluginOrGrailsScript(GrailsScriptRunner.java:525)
+	at org.codehaus.groovy.grails.cli.GrailsScriptRunner.executeCommand(GrailsScriptRunner.java:308)
+	at org.codehaus.groovy.grails.cli.GrailsScriptRunner.main(GrailsScriptRunner.java:135)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.codehaus.groovy.grails.cli.support.GrailsStarter.rootLoader(GrailsStarter.java:234)
+	at org.codehaus.groovy.grails.cli.support.GrailsStarter.main(GrailsStarter.java:262)
+Server failed to start: LifecycleException:  Protocol handler initialization failed: java.net.BindException: Address already in use<null>:8081
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu65000501298390340526
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:37
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu65004531298390341104
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:38
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu650011521298390342005
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:39
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu650013481298390342055
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:40
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu650015491298390342110
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:41
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu650017481298390342167
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:42
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu650020491298390342239
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:43
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650027511298390342911
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:44
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:44
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650031481298390343079
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:45
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650033491298390343141
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:canPost]
+resource created:46
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:46
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650036511298390343268
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:47
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650037501298390343328
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 22
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:javo-http-put]
+resource created:48
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+update url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/update.dispatch
+update body:[name:name changed]
+resource updated:48
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:47
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650041491298390343490
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:49
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650043511298390343615
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 25
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:javo-http-delete]
+resource created:50
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:50
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:49
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650047491298390343855
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:51
+2011-02-22 12:59:04,013 [http-8081-3] ERROR errors.GrailsExceptionResolver  - Se debe especificar un caller.id y un caller.status
+com.ml.exceptions.ForbiddenException: Se debe especificar un caller.id y un caller.status
+	at mockapi.ApiController$_closure7.doCall(ApiController.groovy:96)
+	at mockapi.ApiController$_closure7.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+2011-02-22 12:59:04,126 [http-8081-4] ERROR errors.GrailsExceptionResolver  - El access_token no existe man!!
+com.ml.exceptions.NotFoundException: El access_token no existe man!!
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy:19)
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:51
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650055491298390344380
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:52
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:52
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650060531298390344757
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:53
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+2011-02-22 12:59:04,951 [http-8081-3] ERROR errors.GrailsExceptionResolver  - Not modified exception
+com.ml.exceptions.NotModifiedException: Not modified exception
+	at MLBootStrap$_closure1_closure3_closure8.doCall(MLBootStrap.groovy:30)
+	at mockapi.ApiController$_closure6.doCall(ApiController.groovy:90)
+	at mockapi.ApiController$_closure6.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:53
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650066531298390345066
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:54
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:54
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650070521298390345281
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:55
+timeout url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/error.dispatch
+timeout url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/error.dispatch
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:55
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu650096491298390349532
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:56
+io url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/io_error.dispatch
+2011-02-22 12:59:09,609 [http-8081-3] ERROR errors.GrailsExceptionResolver  - La tenes adantro mal!!!
+java.io.IOException: La tenes adantro mal!!!
+	at mockapi.ApiController$_closure2.doCall(ApiController.groovy:11)
+	at mockapi.ApiController$_closure2.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:56
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu6500101491298390349819
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:57
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:57
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+user-agent: curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18
+accept: application/json
+content-type: application/json
+x-forwarded-for: 166.66.66.6
+x-echelon-lid: ubuntu6500104501298390349970
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 15
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+connection: Keep-Alive
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:set-up]
+resource created:58
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:58
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500109481298390350161
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:59
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:59
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500113491298390350309
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:60
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:60
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500116531298390350441
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:61
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+2011-02-22 12:59:10,498 [http-8081-4] ERROR errors.GrailsExceptionResolver  - El access_token no existe man!!
+com.ml.exceptions.NotFoundException: El access_token no existe man!!
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy:19)
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:61
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500120511298390350546
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:62
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:62
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500124521298390350650
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:63
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:63
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500127531298390350735
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:64
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:64
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500130511298390350811
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:65
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:65
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500134491298390350891
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:66
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: application/json
+x-forwarded-for: 166.66.66.6
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500135511298390350932
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 4
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 13
+content-encoding: UTF-8
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:test]
+resource created:67
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:66
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500138531298390351008
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:68
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+update url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/update.dispatch
+update body:[name:test2]
+resource updated:68
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:68
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500141501298390351124
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:69
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500142531298390351169
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 23
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:delete-jsonp]
+resource created:70
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+2011-02-22 12:59:11,222 [http-8081-4] ERROR errors.GrailsExceptionResolver  - El access_token no existe man!!
+com.ml.exceptions.NotFoundException: El access_token no existe man!!
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy:19)
+	at mockapi.ApiController$_closure3.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:70
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+2011-02-22 12:59:11,282 [http-8081-3] ERROR errors.GrailsExceptionResolver  - No existe el recurso 70
+com.ml.exceptions.NotFoundException: No existe el recurso 70
+	at mockapi.ApiController$_closure6.doCall(ApiController.groovy:87)
+	at mockapi.ApiController$_closure6.doCall(ApiController.groovy)
+	at java.lang.Thread.run(Thread.java:619)
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:69
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500149531298390351388
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:71
+retrieve url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/retrieve.dispatch, params null
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:71
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500152481298390351472
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:72
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:72
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+accept: */*
+content-type: application/json
+connection: Keep-Alive
+accept-encoding: gzip,deflate
+x-echelon-lid: ubuntu6500155511298390351632
+x-echelon-path: PublicApi:InternalApiCall
+x-echelon-sort: 3
+x-caller-id: 41068759
+x-caller-status: ACTIVE
+x-caller-scopes: read,write
+content-length: 16
+host: publicapi.mockapi.internal.mercadolibre.com:8081
+create url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/create.dispatch
+create body:[name:setUp]
+resource created:73
+auth url:http://auth.read.internal.mercadolibre.com:8081/grails/api/auth.dispatch
+delete url:http://publicapi.mockapi.internal.mercadolibre.com:8081/grails/api/delete.dispatch
+resource deleted:73

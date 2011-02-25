@@ -4,3 +4,6 @@
 /junit/*
 /classes/
 /junit/
+/dependencies/*
+/mockapi/lib/*
+/target/*

@@ -41,7 +41,6 @@ public class ServletOutputStreamWrapper extends ServletOutputStream {
 	}
 
 	public void print(char c) throws IOException {
-		System.out.println("*");
 		out.print(c);
 	}
 

@@ -4,17 +4,45 @@
 	<groupId>com.jsonp</groupId>
 	<artifactId>jp2j</artifactId>
 	<name>jp2j</name>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1.c</version>
+	<distributionManagement>
+		<repository>
+			<id>mercadolibre.releases</id>
+			<name>Nexus Staging Repo</name>
+			<uniqueVersion>true</uniqueVersion>
+			<url>http://git.ml.com:8081/nexus/content/repositories/ArqDeploy</url>
+		</repository>
+	</distributionManagement>
 
+
+	<description>Converts JSONP requests into REST calls wrapping the response into a javascript callback execution.
+
+ie.
+http://some.domain/any/resource?callback=jsonp.callbackFunction
+
+response:
+jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quot;}, {results:any}]);</description>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.2</version>
 				<executions>
 					<execution>
 						<id>download-dependencies</id>
-						<phase>package</phase>
+						<phase>test-compile</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -34,7 +62,7 @@
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>integration-test</phase>
+						<phase>test-compile</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
@@ -141,6 +169,27 @@
 			<groupId>org.codehaus.groovy.modules.http-builder</groupId>
 			<artifactId>http-builder</artifactId>
 			<version>0.5.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>xml-apis</artifactId>
+					<groupId>xml-apis</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
 		</dependency>
 	</dependencies>
 </project>

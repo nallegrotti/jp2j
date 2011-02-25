@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +26,7 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 
 	private static final int DEFAULT_JSONP_STATUS = 200;
 	private HttpServletRequest originalRequest;
-	private int status;
+	private Integer status;
 	private Map<String, String> headersMap;
 	private ServletOutputStream out = null;
 	private PrintWriter writer = null;
@@ -88,8 +87,12 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 	@Override
 	public ServletOutputStream getOutputStream() throws IOException {
 		if (out == null) {
+			String originalEncoding = getCharacterEncoding();
+			setContentType("text/javascript");
+			setCharacterEncoding(originalEncoding);// NEW
+			getHeaders().put("Content-Type", "text/javascript");
+			
 			out = super.getOutputStream();
-			System.out.println("Entregando Output");
 
 			ServletOutputStreamWrapper servletOutputStreamWrapper = new ServletOutputStreamWrapper(
 					out);
@@ -108,24 +111,17 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 			});
 			
 			out = servletOutputStreamWrapper;
-			StringBuilder head = new StringBuilder();
-			head.append(originalRequest.getParameter("callback"));
-			head.append("([");
-			head.append(status);
-			head.append(", ");
+			out.print(originalRequest.getParameter("callback"));
+			out.print("([");
+			out.print(status);
+			out.print(", ");
 			
-			out.print(head.toString());
 			try {
 				copyHeaders(out);
 			} catch (JSONException e) {
 				throw new IOException("Can't copy JSONP headers", e);
 			}
 			out.print(", ");
-			
-			String originalEncoding = getCharacterEncoding();
-			setContentType("text/javascript");
-			setCharacterEncoding(originalEncoding);// NEW
-			getHeaders().put("Content-Type", "text/javascript");
 		}
 		return out;
 	}
@@ -136,30 +132,6 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 			writer = new PrintWriter(new OutputStreamWriter(getOutputStream(), Charset.forName(getCharacterEncoding())));
 		}
 		return writer;
-//		if (writer==null) {
-//			writer  = new PrintWriter(super.getWriter()) {
-//
-//				@Override
-//				public void close() {
-//					print(". he dicho.");
-//					super.close();
-//				}
-//				
-//				
-//				
-//			};
-//			
-//			writer.print(originalRequest.getParameter("callback"));
-//			writer.print("([");
-//			writer.print(status);
-//			writer.print(", ");
-//			
-//			String originalEncoding = getCharacterEncoding();
-//			setContentType("text/javascript");
-//			setCharacterEncoding(originalEncoding);// NEW
-//			getHeaders().put("Content-Type", "text/javascript");
-//		}
-//		return writer;
 	}
 
 	public static HttpServletResponse getInstance(

@@ -186,6 +186,9 @@ class ApiController {
     }
     
     def echo = {
+		if (params.status) {
+			response.status = Integer.parseInt(params.status)
+		}
 	    render "${params.body}"
 	    def headers = params.headers
 	    ([]+headers).each {

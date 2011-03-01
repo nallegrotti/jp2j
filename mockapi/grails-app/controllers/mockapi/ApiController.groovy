@@ -189,14 +189,17 @@ class ApiController {
 		if (params.status) {
 			response.status = Integer.parseInt(params.status)
 		}
+		def headers = request.getParameterValues("headers")
+		println "leídos -> ${headers}"
+		headers.each {
+			if (it) {
+				def h = it.split(":")
+				println  "setting ${it}"
+				response.setHeader(h[0], h[1])
+			}
+		}
+		println response
 	    render "${params.body}"
-	    def headers = params.headers
-	    ([]+headers).each {
-		    if (it) {
-			    def h = it.split(":")
-			    response.setHeader(h[0], h[1])
-		    }
-	    }
     }
     
     def echoPost = {

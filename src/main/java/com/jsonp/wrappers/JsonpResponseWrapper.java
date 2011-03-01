@@ -1,5 +1,6 @@
 package com.jsonp.wrappers;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -12,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
-import org.apache.commons.collections.Closure;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,31 +26,30 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 
 	private static final int DEFAULT_JSONP_STATUS = 200;
 	private HttpServletRequest originalRequest;
-	private Integer status;
+	private Integer status = null;
 	private Map<String, String> headersMap;
 	private ServletOutputStream out = null;
 	private PrintWriter writer = null;
+	private ByteArrayOutputStream bufferOut;
+	private ServletOutputStream bufferedOutput;
 
 	public JsonpResponseWrapper(HttpServletResponse response) {
 		super(response);
 	}
 
 	/**
-	 * Copia los headers de la rta en el body como JSON
+	 * Devuelve los headers de la rta como JSON
 	 * 
-	 * @param out
-	 * @param resp
 	 * @throws IOException
 	 * @throws JSONException
 	 */
-	private void copyHeaders(ServletOutputStream out) throws IOException,
-			JSONException {
+	private String getHeadersString() throws JSONException {
 		Map<String, String> headers = getHeaders();
 		JSONObject json = new JSONObject();
 		for (Map.Entry<String, String> h : headers.entrySet()) {
 			json.put(h.getKey(), h.getValue());
 		}
-		out.print(json.toString());
+		return json.toString();
 	}
 
 	@Override
@@ -67,16 +66,20 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 
 	@Override
 	public void setHeader(String name, String value) {
+		System.out.println("Header=" + name + ":" + value);
 		if (!name.equals("Content-Length")) {
 			Map<String, String> headers = getHeaders();
 			headers.put(name, value);
 			super.setHeader(name, value);
 		}
-		if ("Content-Type".equals(name)) {
-			setContentType(value);
-		}
 	}
 
+	@Override
+	public void addHeader(String name, String value) {
+		System.out.println("addHeader=" + name + ":" + value);
+		super.addHeader(name, value);
+	}
+	
 	private Map<String, String> getHeaders() {
 		if (headersMap == null) {
 			headersMap = new HashMap<String, String>();
@@ -86,44 +89,51 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 
 	@Override
 	public ServletOutputStream getOutputStream() throws IOException {
-		if (out == null) {
-			String originalEncoding = getCharacterEncoding();
-			setContentType("text/javascript");
-			setCharacterEncoding(originalEncoding);// NEW
-			getHeaders().put("Content-Type", "text/javascript");
-			
-			out = super.getOutputStream();
-
-			ServletOutputStreamWrapper servletOutputStreamWrapper = new ServletOutputStreamWrapper(
-					out);
-			servletOutputStreamWrapper.setBeforeClose(new Closure() {
-
-				@Override
-				public void execute(Object arg0) {
-					ServletOutputStream out = (ServletOutputStream) arg0;
-					try {
-						out.print("]);");
-					} catch (IOException e) {
-						throw new RuntimeException(
-								"Can't close JSONP response properly", e);
-					}
-				}
-			});
-			
-			out = servletOutputStreamWrapper;
-			out.print(originalRequest.getParameter("callback"));
-			out.print("([");
-			out.print(status);
-			out.print(", ");
-			
-			try {
-				copyHeaders(out);
-			} catch (JSONException e) {
-				throw new IOException("Can't copy JSONP headers", e);
-			}
-			out.print(", ");
+		if (bufferedOutput == null) {
+			bufferOut = new ByteArrayOutputStream();
+			bufferedOutput = new ServletOutputStreamWrapper(bufferOut);
 		}
-		return out;
+		return bufferedOutput;
+	}
+	
+	
+	
+	@Override
+	public void flushBuffer() throws IOException {
+		printResponse();
+		out.flush();
+	}
+
+	private void printResponse() throws IOException {
+		String headers;
+		try {
+			headers = getHeadersString();
+		} catch (JSONException e) {
+			throw new IOException("Can't copy JSONP headers", e);
+		}
+		String originalEncoding = getCharacterEncoding();
+		setContentType("text/javascript");
+		setCharacterEncoding(originalEncoding);// NEW
+		getHeaders().put("Content-Type", "text/javascript");
+
+		out = super.getOutputStream();
+		out.print(originalRequest.getParameter("callback"));
+		out.print("([");
+		
+		if (status!=null) {
+			out.print(status);
+		}else {
+			out.print("200");
+		}
+		out.print(", ");
+		
+		out.print(headers);
+		
+		out.print(", ");
+		
+		out.write(bufferOut.toByteArray());
+		
+		out.print("]);");
 	}
 
 	@Override

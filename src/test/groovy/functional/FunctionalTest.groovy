@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-class FunctionalTests {
+class FunctionalTest {
 	
 	def DOMAIN = "http://localhost:8080"
 	

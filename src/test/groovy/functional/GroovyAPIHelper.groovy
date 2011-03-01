@@ -40,15 +40,15 @@ class GroovyAPIHelper {
 
     static def post (String name) {
 	def resp = http.post(path: PRIVATE_RESOURCE, 
-			     query:[],
 				 headers:[ "X-Caller-Scopes" : "123", "X-Caller-Id" : "123" ],
+//			     query:[],
                              body:[name: name],
 			     requestContentType : JSON)
     }
 
     static def delete (int id) {
 	def resp = http.delete(path: "${PRIVATE_RESOURCE}/${id}", 
-		query:[],
+//		query:[],
 		headers:["X-Caller-Scopes":"123", "X-Caller-Id":"123"],
 		requestContentType : JSON)
     }

@@ -4,7 +4,7 @@
 	<groupId>com.jsonp</groupId>
 	<artifactId>jp2j</artifactId>
 	<name>jp2j</name>
-	<version>0.0.1.c</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<distributionManagement>
 		<repository>
 			<id>mercadolibre.releases</id>
@@ -22,6 +22,7 @@ http://some.domain/any/resource?callback=jsonp.callbackFunction
 
 response:
 jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quot;}, {results:any}]);</description>
+	<url>http://maven.apache.org</url>
 	<build>
 		<plugins>
 			<plugin>
@@ -29,12 +30,38 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.0.2</version>
 				<configuration>
-
 					<source>1.6</source>
 					<target>1.6</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.groovy.maven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+				<version>1.0</version>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>compile Tests</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<fileset>
+									<directory>${basedir}/src/test/groovy</directory>
+									<includes>
+										<include>**/**/*.groovy</include>
+									</includes>
+								</fileset>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -62,7 +89,7 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
-						<phase>test-compile</phase>
+						<phase>compile</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
@@ -126,6 +153,7 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.0.3</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -159,6 +187,7 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>1.7.3</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-collections</groupId>
@@ -185,11 +214,21 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 			<groupId>net.sf.ezmorph</groupId>
 			<artifactId>ezmorph</artifactId>
 			<version>1.0.6</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
 			<version>1.8.3</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<properties>
+<!--        <project>-->
+<!--            <build>-->
+<!--                <outputDirectory>"target/desa/classes"</outputDirectory>-->
+<!--            </build>-->
+<!--        </project>-->
+	</properties>
 </project>

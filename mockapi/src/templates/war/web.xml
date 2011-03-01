@@ -17,15 +17,15 @@
     </context-param>
 
     <filter>
-        <filter-name>sitemesh</filter-name>
-        <filter-class>org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter</filter-class>
-    </filter>
-
-    <filter>
         <filter-name>jp2j</filter-name>
         <filter-class>com.jsonp.filters.JsonpFilter</filter-class>
     </filter>
     
+    <filter>
+        <filter-name>sitemesh</filter-name>
+        <filter-class>org.codehaus.groovy.grails.web.sitemesh.GrailsPageFilter</filter-class>
+    </filter>
+
     <filter>
         <filter-name>charEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -40,17 +40,17 @@
     </filter>
 
     <filter-mapping>
+        <filter-name>jp2j</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
         <filter-name>charEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter-mapping>
-        <filter-name>jp2j</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 

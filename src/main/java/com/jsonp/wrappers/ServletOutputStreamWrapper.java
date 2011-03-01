@@ -1,6 +1,7 @@
 package com.jsonp.wrappers;
 
 import java.io.IOException;
+import java.io.OutputStream;
 
 import javax.servlet.ServletOutputStream;
 
@@ -8,7 +9,7 @@ import org.apache.commons.collections.Closure;
 
 public class ServletOutputStreamWrapper extends ServletOutputStream {
 
-	private ServletOutputStream out;
+	private OutputStream out;
 	private Closure beforeClose;
 
 	public Closure getBeforeClose() {
@@ -20,7 +21,9 @@ public class ServletOutputStreamWrapper extends ServletOutputStream {
 	}
 
 	public void close() throws IOException {
-		beforeClose.execute(out);
+		if (beforeClose!=null) {
+			beforeClose.execute(out);
+		}
 		out.close();
 	}
 
@@ -36,66 +39,6 @@ public class ServletOutputStreamWrapper extends ServletOutputStream {
 		return out.hashCode();
 	}
 
-	public void print(boolean b) throws IOException {
-		out.print(b);
-	}
-
-	public void print(char c) throws IOException {
-		out.print(c);
-	}
-
-	public void print(double d) throws IOException {
-		out.print(d);
-	}
-
-	public void print(float f) throws IOException {
-		out.print(f);
-	}
-
-	public void print(int i) throws IOException {
-		out.print(i);
-	}
-
-	public void print(long l) throws IOException {
-		out.print(l);
-	}
-
-	public void print(String s) throws IOException {
-		out.print(s);
-	}
-
-	public void println() throws IOException {
-		out.println();
-	}
-
-	public void println(boolean b) throws IOException {
-		out.println(b);
-	}
-
-	public void println(char c) throws IOException {
-		out.println(c);
-	}
-
-	public void println(double d) throws IOException {
-		out.println(d);
-	}
-
-	public void println(float f) throws IOException {
-		out.println(f);
-	}
-
-	public void println(int i) throws IOException {
-		out.println(i);
-	}
-
-	public void println(long l) throws IOException {
-		out.println(l);
-	}
-
-	public void println(String s) throws IOException {
-		out.println(s);
-	}
-
 	public String toString() {
 		return out.toString();
 	}
@@ -108,7 +51,7 @@ public class ServletOutputStreamWrapper extends ServletOutputStream {
 		out.write(b);
 	}
 
-	public ServletOutputStreamWrapper(ServletOutputStream out) {
+	public ServletOutputStreamWrapper(OutputStream out) {
 		this.out = out;
 	}
 

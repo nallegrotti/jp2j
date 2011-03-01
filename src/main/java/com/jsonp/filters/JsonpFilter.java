@@ -34,10 +34,12 @@ public class JsonpFilter implements Filter {
 				HttpServletResponse res = JsonpResponseWrapper.getInstance(
 						originalResponse, originalRequest);
 				filterChain.doFilter(req, res);
+				res.flushBuffer();
 			} else {
 				filterChain.doFilter(request, response);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			filterChain.doFilter(request, response);
 		}
 

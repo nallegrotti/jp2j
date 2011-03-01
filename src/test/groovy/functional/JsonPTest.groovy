@@ -41,13 +41,13 @@ class JsonPTest {
 		def uri = "$GroovyAPIHelper.ECHO"
 		def http = new HTTPBuilder( GroovyAPIHelper.DOMAIN )
 		
-		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[body:"dummy", headers:"Content-Type:text/html;charset=utf-8", callback:'test']
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				def text = resp.entity.content.text
-				assert  "${text}" ==~ "test\\(\\[200,.*\"Content-Type\":\"text/html;charset=utf-8\".*dummy\\]\\);"
+				assert  text ==~ "test\\(\\[200,.*\"Content-Type\":\"text/html;charset=utf-8\".*dummy\\]\\);"
 				
 				def cType = resp.headers["Content-Type"]
 				assert cType.value == "text/javascript;charset=utf-8"
@@ -59,7 +59,7 @@ class JsonPTest {
 		def uri = "$CONTENT_CHECK"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -76,7 +76,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/$resourceId"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test", access_token: "invalid_token"]
 			) { resp ->
 				assertNotNull resp
@@ -92,7 +92,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/$resourceId"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -108,7 +108,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/$resourceId"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json; q=1", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json; q=1", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -124,7 +124,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/$resourceId"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"*/*", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"*/*", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -140,7 +140,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/$resourceId"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -156,7 +156,7 @@ class JsonPTest {
 		def uri = "$PRIVATE_RESOURCE"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"POST", "_body":"{name:\"test\"}"]
 			) { resp ->
 				assertNotNull resp
@@ -172,7 +172,7 @@ class JsonPTest {
 		def uri = "$PRIVATE_RESOURCE/${resourceId}"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"PUT", "_body":"{name:\"test2\"}"]
 			) { resp ->
 				assertNotNull resp
@@ -194,7 +194,7 @@ class JsonPTest {
 		def uri = "$PRIVATE_RESOURCE/${resId}"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:["callback":"test", "access_token":BAD_ACCESS_TOKEN, "_method":"DELETE"]
 			) { resp ->
 				assertNotNull resp
@@ -206,7 +206,7 @@ class JsonPTest {
 		
 		
 		//Prueba con Access Token válido	
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"DELETE"]
 			) { resp ->
 				assertNotNull resp
@@ -230,7 +230,7 @@ class JsonPTest {
 		def uri = "$PUBLIC_RESOURCE/${resourceId}"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test"]
 			) { resp ->
 				assertNotNull resp
@@ -246,7 +246,7 @@ class JsonPTest {
 		def uri = "$GroovyAPIHelper.ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query:[callback:"test", _method:'POST', _body:'á é í ó ú' ]
 			) { resp ->
 				assertNotNull resp
@@ -262,7 +262,7 @@ class JsonPTest {
 		def uri = "$GroovyAPIHelper.ECHO_HEADERS"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6"]
+		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
 			, query: [callback:"test"])
 		{ resp ->
 			assertNotNull resp

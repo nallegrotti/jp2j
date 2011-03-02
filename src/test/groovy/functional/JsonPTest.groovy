@@ -18,22 +18,13 @@ import org.junit.Before;
 import static functional.GroovyAPIHelper.*;
 
 class JsonPTest {
-	def ACCESS_TOKEN = "082610-BUPEUYIKN7I1M4RNIPQWIWR4TCILJ5-63762259";
-	private static final String BAD_ACCESS_TOKEN = "082610-BUPEUYIKN7I1M4RNIPQWIWR4TCILJ5-63762259-JASKJ";
-	
-	def resourceId
-	
+
 	@Before
 	public void setUp() throws Exception {
-		def resp = post("setUp")
-		assert 201 == resp.status
-		resourceId = resp.data.id
 	}
 	
 	@After
 	public void tearDown() throws Exception {
-		assumeNotNull(resourceId)
-		delete(resourceId)
 	}
 	
 	@Test
@@ -41,7 +32,7 @@ class JsonPTest {
 		def uri = "$GroovyAPIHelper.ECHO"
 		def http = new HTTPBuilder( GroovyAPIHelper.DOMAIN )
 		
-		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
+		http.get (path:uri, headers:["X-Public":"True"]
 			, query:[body:"dummy", headers:"Content-Type:text/html;charset=utf-8", callback:'test']
 			) { resp ->
 				assertNotNull resp
@@ -55,189 +46,82 @@ class JsonPTest {
 	}
 	
 	@Test
-	void jsonPCallContentLength(){
-		def uri = "$CONTENT_CHECK"
-		println uri
-		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assertEquals text.length(), Integer.parseInt(resp.headers["Content-Length"].value)
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{.*}]\\);"
-			}
-	}
-	
-	@Test
 	void jsonPCallError(){
-		def uri = "$PUBLIC_RESOURCE/$resourceId"
+		def uri = "$ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test", access_token: "invalid_token"]
+		http.get (path:uri, headers:["X-Public":"True"]
+			, query:[callback:"test", status:"404", body:"{response body}"]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[404, *\\{.*\\}, *\\{\"message\".*\\}]\\);"
+				assert text ==~ "test\\(\\[404, *\\{.*\\},.*\\{response body\\}]\\);"
 			}
 	}
 	
 	@Test
 	void jsonPCallAppJson(){
-		def uri = "$PUBLIC_RESOURCE/$resourceId"
+		def uri = "$ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
+		http.get (path:uri, headers:["X-Public":"True"]
+			, query:[callback:"test", body:"{response body}"]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":$resourceId.*\\}]\\);"
-			}
-	}
-	
-	@Test
-	void jsonPCallAppJsonWithAcceptParams(){
-		def uri = "$PUBLIC_RESOURCE/$resourceId"
-		println uri
-		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json; q=1", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":$resourceId.*\\}]\\);"
-			}
-	}
-	
-	@Test
-	void jsonPCallAppTodos(){
-		def uri = "$PUBLIC_RESOURCE/$resourceId"
-		println uri
-		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"*/*", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":$resourceId.*\\}]\\);"
-			}
-	}
-	
-	@Test
-	void jsonPCallAppOpera(){
-		def uri = "$PUBLIC_RESOURCE/$resourceId"
-		println uri
-		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":$resourceId.*\\}]\\);"
+				assert text ==~ "test\\(\\[200, *\\{.*\\},.*\\{response body\\}]\\);"
 			}
 	}
 	
 	@Test
 	void jsonPCallPost(){
-		def uri = "$PRIVATE_RESOURCE"
+		def uri = "$ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"POST", "_body":"{name:\"test\"}"]
+		http.get (path:uri, headers:[ "X-Public":"True"]
+			, query:["callback":"test", "_method":"POST", "_body":"{name:\"test\"}"]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[201, *\\{.*\\}, *\\{\"id\":.*,\"name\":\"test\"\\}]\\);"
+				assert text ==~ "test\\(\\[200, *\\{.*\\},\\s*POSTED:\\s*\\{name:\"test\"\\}]\\);"
 			}
 	}
 	
 	@Test
 	void jsonPCallPut(){
-		def uri = "$PRIVATE_RESOURCE/${resourceId}"
+		def uri = "$ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"PUT", "_body":"{name:\"test2\"}"]
+		http.get (path:uri, headers:[ "X-Public":"True"]
+			, query:["callback":"test", "_method":"PUT", "_body":"{name:\"test\"}"]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":.*,\"name\":\"test2\"\\}]\\);"
+				assert text ==~ "test\\(\\[200, *\\{.*\\},\\s*PUT:\\s*\\{name:\"test\"\\}]\\);"
 			}
 	}
 	
 	@Test
 	void jsonPCallDelete(){
-		def response = post("delete-jsonp", ACCESS_TOKEN)
-		assert 201 == response.status
-		def resId = response.data.id
-		println resId
-		
-		//Prueba delete con Access Token inválido
-		def uri = "$PRIVATE_RESOURCE/${resId}"
+		def uri = "$ECHO"
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:["callback":"test", "access_token":BAD_ACCESS_TOKEN, "_method":"DELETE"]
+		http.get (path:uri, headers:[ "X-Public":"True"]
+			, query:["callback":"test", "_method":"DELETE", "_body":"{name:\"test\"}"]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[404, *\\{.*\\}, *\\{.*\\}]\\);"
-			}
-		
-		
-		//Prueba con Access Token válido	
-		http.get (path:uri, headers:["Accept":"application/json", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:["callback":"test", "access_token":ACCESS_TOKEN, "_method":"DELETE"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":$resId.*\"name\":\"delete-jsonp\".*\\}]\\);"
-			}
-		
-		
-		try{
-			response = get(resId)
-			assertFail "No debe existir"
-		}catch(HttpResponseException e){
-			assert e.message == "Not Found"
-		}
-	}
-	
-	@Test
-	void jsonPCallAppJavascript(){
-		def uri = "$PUBLIC_RESOURCE/${resourceId}"
-		println uri
-		def http = new HTTPBuilder( DOMAIN )
-		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test"]
-			) { resp ->
-				assertNotNull resp
-				assertEquals 200, resp.status
-				assertEquals 'text/javascript', resp.contentType
-				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *\\{\"id\":${resourceId}.*\\}]\\);"
+				assert text ==~ "test\\(\\[200, *\\{.*\\},\\s*DELETED:\\s*\\{name:\"test\"\\}]\\);"
 			}
 	}
 	
@@ -247,13 +131,13 @@ class JsonPTest {
 		println uri
 		def http = new HTTPBuilder( DOMAIN )
 		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
-			, query:[callback:"test", _method:'POST', _body:'á é í ó ú' ]
+			, query:[callback:"test", _method:'POST', _body:'{á é í ó ú}' ]
 			) { resp ->
 				assertNotNull resp
 				assertEquals 200, resp.status
 				assertEquals 'text/javascript', resp.contentType
 				def text = resp.entity.content.text
-				assert text ==~ "test\\(\\[200, *\\{.*\\}, *á é í ó ú\\]\\);"
+				assert text ==~ "test\\(\\[200, *\\{.*\\},\\s*POSTED:\\s*\\{á é í ó ú\\}\\]\\);"
 			}
 	}
 	

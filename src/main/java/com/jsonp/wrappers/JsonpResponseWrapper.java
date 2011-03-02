@@ -66,7 +66,6 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 
 	@Override
 	public void setHeader(String name, String value) {
-		System.out.println("Header=" + name + ":" + value);
 		if (!name.equals("Content-Length")) {
 			Map<String, String> headers = getHeaders();
 			headers.put(name, value);
@@ -75,9 +74,9 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 	}
 
 	@Override
-	public void addHeader(String name, String value) {
-		System.out.println("addHeader=" + name + ":" + value);
-		super.addHeader(name, value);
+	public void setContentType(String type) {
+		setHeader("Content-Type", type);
+		super.setContentType(type);
 	}
 	
 	private Map<String, String> getHeaders() {

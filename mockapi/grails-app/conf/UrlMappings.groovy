@@ -14,5 +14,11 @@ class UrlMappings {
 		"/echoHeaders"(controller:"api", action = [
 				GET:"echoHeaders"
 			])
+		"/exception"(controller:"api", action = [
+				GET:"exception"
+			])
+		"500"(controller:"api", action = [
+				GET:"errorHandler"
+			])
 	}
 }

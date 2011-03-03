@@ -57,4 +57,13 @@ class ApiController {
 	    }
 	    render "${rta}"
     }
+	
+	def exception = {
+		request['flagAtribute'] = 'Flaged'
+		throw new Exception("**  Boom!  **")
+	}
+	def errorHandler = {
+		render "Error!: //${request.exception.cause.message}//**${request.flagAtribute}**}"
+		response.status = 500
+	}
 }

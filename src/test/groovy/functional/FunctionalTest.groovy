@@ -59,4 +59,18 @@ class FunctionalTest {
 				assert text ==~ "dummy"
 			}
 	}
+	
+	@Test
+	void errorHandler() {
+		def uri = "/exception"
+		def http = new HTTPBuilder( DOMAIN )
+		http.get (path:uri, headers:["Accept":"application/json", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
+			, query:[callback:"test"]
+			) { resp ->
+				assertNotNull resp
+				def text = resp.entity.content.text
+				println text
+				assert text ==~ "test(.*);"
+			}
+	}
 }

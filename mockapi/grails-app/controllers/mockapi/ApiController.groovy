@@ -58,6 +58,11 @@ class ApiController {
 	    render "${rta}"
     }
 	
+	def echoParams = {
+		println params
+		render "${'*'*50}  ${params}"
+	}
+	
 	def exception = {
 		request['flagAtribute'] = 'Flaged'
 		throw new Exception("**  Boom!  **")

@@ -2,7 +2,6 @@
 package functional
 ;
 
-import groovyx.net.http.HttpResponseException;
 import groovyx.net.http.HTTPBuilder;
 
 import static org.junit.Assert.*;
@@ -154,5 +153,24 @@ class JsonPTest {
 			assert text ==~ "test\\(\\[200, *\\{.*\\},.*content-type:application/json.*\\);" 
 		}
 
+	}
+
+	@Test
+	void jsonPCallParameterFilter(){
+		def uri = "$GroovyAPIHelper.ECHO_PARAMS"
+		println uri
+		def http = new HTTPBuilder( DOMAIN )
+		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
+			, query:[callback:"test", _method:'POST', _body:'dummy', moreParameter:'any' ]
+			) { resp ->
+				assertNotNull resp
+				assertEquals 200, resp.status
+				assertEquals 'text/javascript', resp.contentType
+				def text = resp.entity.content.text
+				assert text ==~ "test\\(\\[200, *\\{.*\\},.*moreParameter:any.*\\]\\);"
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*callback:.*\\]\\);")
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*_method:.*\\]\\);")
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*_body:.*\\]\\);")
+			}
 	}
 }

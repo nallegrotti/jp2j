@@ -4,7 +4,7 @@
 	<groupId>com.jsonp</groupId>
 	<artifactId>jp2j</artifactId>
 	<name>jp2j</name>
-	<version>0.1.0</version>
+	<version>0.1.1</version>
 	<distributionManagement>
 		<repository>
 			<id>mercadolibre.releases</id>
@@ -198,12 +198,7 @@ jsonp.callbackFunction([200, {&quot;Content-Type&quot;:&quot;text/javascript&quo
 			<groupId>org.codehaus.groovy.modules.http-builder</groupId>
 			<artifactId>http-builder</artifactId>
 			<version>0.5.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>xml-apis</artifactId>
-					<groupId>xml-apis</groupId>
-				</exclusion>
-			</exclusions>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>

@@ -173,4 +173,24 @@ class JsonPTest {
 				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*_body:.*\\]\\);")
 			}
 	}
+	
+	@Test
+	void jsonPCallQueryStringFilter(){
+		def uri = "/mockapi/queryString"
+		println uri
+		def http = new HTTPBuilder( DOMAIN )
+		http.get (path:uri, headers:["Accept":"application/javascript", "Content-Type" : "text/javascript", "X-Forwarded-For": "166.66.66.6", "X-Public":"True"]
+			, query:[callback:"test", _method:'POST', _body:'dummy', moreParameter:'any' ]
+			) { resp ->
+				assertNotNull resp
+				assertEquals 200, resp.status
+				assertEquals 'text/javascript', resp.contentType
+				def text = resp.entity.content.text
+				assert text ==~ "test\\(\\[200, *\\{.*\\},.*moreParameter=any.*\\]\\);"
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*callback=.*\\]\\);")
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*_method=.*\\]\\);")
+				assert !(text ==~ "test\\(\\[200, *\\{.*\\},.*_body=.*\\]\\);")
+			}
+	}
+
 }

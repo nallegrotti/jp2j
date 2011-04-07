@@ -71,4 +71,7 @@ class ApiController {
 		render "Error!: //${request.exception.cause.message}//**${request.flagAtribute}**}"
 		response.status = 500
 	}
+	def queryString = {
+		render "${request.queryString}"
+	}
 }

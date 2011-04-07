@@ -21,6 +21,7 @@ class UrlMappings {
 		"/exception"(controller:"api", action = [
 				GET:"exception"
 			])
+		"/mockapi/$action"(controller:"api")
 		"500"(controller:"api", action = [
 				GET:"errorHandler"
 			])

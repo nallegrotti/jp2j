@@ -130,6 +130,7 @@ public class JsonpResponseWrapper extends HttpServletResponseWrapper {
 		
 		out.print(", ");
 		
+		getOutputStream();//fuerza la creación de bufferOut
 		out.write(bufferOut.toByteArray());
 		
 		out.print("]);");

@@ -80,8 +80,8 @@ public class JsonpRequestWrapper extends HttpServletRequestWrapper {
 
 	@Override
 	public String getMethod() {
-		String method = super.getParameter("_method").toUpperCase();
-		return method != null ? method : super.getMethod();
+		String method = super.getParameter("_method");
+		return method != null ? method.toUpperCase() : super.getMethod();
 	}
 
 	@Override
